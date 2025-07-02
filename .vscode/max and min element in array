@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main() {
+    int s[] = {1, 2, 3};
+    int n = sizeof(s) / sizeof(s[0]);
+    int max = s[0];
+    int min = s[0];
+    for (int i = 1; i < n; i++) {
+        if (s[i] > max) max = s[i];
+        if (s[i] < min) min = s[i];
+    }
+    printf("Array: ");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", s[i]);
+    }
+    printf("\nMax element: %d\nMin element: %d\n", max, min);
+    return 0;
+}
