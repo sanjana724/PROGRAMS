@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "PROBLEM.C": "cpp"
+        "PROBLEM.C": "cpp",
+        "array reversal.C": "cpp"
     }
 }
