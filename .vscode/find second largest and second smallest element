@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+int main() {
+    int s[] = {1, 2, 3};
+    int n = sizeof(s) / sizeof(s[0]);
+    if (n < 2) {
+        printf("Array must have at least two elements.\n");
+        return 1;
+    }
+    int first_min = s[0], second_min = s[0];
+    int first_max = s[0], second_max = s[0];
+    // Find first min and max
+    for (int i = 1; i < n; i++) {
+        if (s[i] < first_min) first_min = s[i];
+        if (s[i] > first_max) first_max = s[i];
+    }
+    // Initialize second min and max to a value not equal to first min/max
+    second_min = first_max;
+    second_max = first_min;
+    for (int i = 0; i < n; i++) {
+        if (s[i] > first_min && s[i] < second_min) second_min = s[i];
+        if (s[i] < first_max && s[i] > second_max) second_max = s[i];
+    }
+    if (second_min == first_max) {
+        printf("No second smallest element.\n");
+    } else {
+        printf("Second smallest element: %d\n", second_min);
+    }
+    if (second_max == first_min) {
+        printf("No second largest element.\n");
+    } else {
+        printf("Second largest element: %d\n", second_max);
+    }
+    return 0;
+}
