@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    int s[] = {2, 3, 4, 5, 6, 7, 8};
+    int n = sizeof(s) / sizeof(s[0]);
+    printf("Original array: ");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", s[i]);
+    }
+    printf("\n");
+    // Reverse the array
+    for (int i = 0; i < n / 2; i++) {
+        int temp = s[i];
+        s[i] = s[n - 1 - i];
+        s[n - 1 - i] = temp;
+    }
+    printf("Reversed array: ");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", s[i]);
+    }
+    printf("\n");
+    return 0;
+}
